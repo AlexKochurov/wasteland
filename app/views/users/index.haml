@@ -1,3 +1,18 @@
-%ul
-  - @users.each do |user|
-    %li= user.fullname
+%table.table
+  %thead
+    %th Email
+    %th Full name
+    %th Birthdate
+    %th Admin
+    %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.fullname
+        %td= user.birthdate
+        %td= user.admin
+        %td
+          = link_to 'Edit', '#'
+          |
+          = link_to 'Delete', '#'
